@@ -1,3 +1,5 @@
+PSQL commands:
+
 <!-- prettier-ignore -->
 \connect babynames;
 

@@ -2,6 +2,14 @@ import { Router } from "express";
 import path from "path";
 import { findNames } from "../dbUtils";
 
+// API needs to answer the following questions
+// names for boys/girls
+// names from year 1999
+// names that start with J
+// popular names from 2019 (WORK IN PROGRESS)
+// tell about the name Jonathan
+// boy names from 2019 that start with J
+
 export default ({ config, db, passport }) => {
   let api = Router();
 
