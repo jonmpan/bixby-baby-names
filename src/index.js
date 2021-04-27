@@ -6,6 +6,8 @@ import config from "./config.json";
 import db from "../models";
 import sequelize from "sequelize";
 import names from "./api/names";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 const app = express();
 app.server = http.createServer(app);
