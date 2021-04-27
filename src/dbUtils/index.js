@@ -21,6 +21,17 @@ const findNames = async (query) => {
   return names;
 };
 
+const findRandomName = async (query) => {
+  const sequelizePayload = {
+    attributes,
+    order: [sequelize.literal("random()")],
+  };
+  const where = constructWhere(query);
+  where ? (sequelizePayload.where = where) : null;
+  const name = await Names.findOne(sequelizePayload);
+  return name;
+};
+
 const constructWhere = (query) => {
   const { year, gender, name, letter, sort, order } = query;
   let where = {};
@@ -37,4 +48,4 @@ const constructWhere = (query) => {
   return where;
 };
 
-export { findNames, getAllNames };
+export { findNames, findRandomName, getAllNames };

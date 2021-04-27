@@ -27,8 +27,6 @@ const parseDataFiles = async (file) => {
       }
     }
   }
-  // console.log("allNames", allNames);
-  console.log("allNames.length", allNames.length);
   await Names.bulkCreate(allNames, { returning: false });
   console.timeEnd("getting all names");
   return allNames;

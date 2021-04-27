@@ -1,6 +1,6 @@
 import { Router } from "express";
 import path from "path";
-import { findNames } from "../dbUtils";
+import { findNames, findRandomName } from "../dbUtils";
 
 // API needs to answer the following questions
 // names for boys/girls
@@ -16,7 +16,13 @@ export default ({ config, db, passport }) => {
   api.get("/", async (req, res) => {
     console.log("req.query", req.query);
     const names = await findNames(req.query);
-    res.status(200).json({ count: names.length, names });
+    res.status(200).json({ count: names?.length || 0, names });
+  });
+
+  api.get("/random", async (req, res) => {
+    console.log("req.query", req.query);
+    const names = await findRandomName(req.query);
+    res.status(200).json({ count: names?.length || 0, names });
   });
 
   return api;
