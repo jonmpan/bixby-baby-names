@@ -31,7 +31,8 @@
     "dialectOptions": {
       "requestTimeout": 0,
       "ssl": {
-        "require": true
+        "require": true,
+        "rejectUnauthorized": false
       }
     }
   }

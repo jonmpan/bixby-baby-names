@@ -29,3 +29,5 @@ app.listen(process.env.PORT || config.port, () => {
 // utils.parseDataFiles();
 
 // pg_dump -Fc --no-acl --no-owner -h localhost -U postgres babynames > babynames.dump
+// s3://jonmpannewbucket/babynames.dump
+// heroku pg:backups:restore s3://jonmpannewbucket/babynames.dump DATABASE_URL
